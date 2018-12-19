@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
   <link rel="import" href="bower_components/google-map/google-map.html">
+  <link rel="import" href="bower_components/polymer-webgl-visualization/point-overlay.html">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -15,10 +17,15 @@
 </head>
 
 <body unresolved>
-  <google-map latitude="37.779" longitude="-122.3892" zoom="13"
-              api-key="AIzaSyADSdPpM6BerLBUuvmLnwq_nL4S6ac4EQg"
-              styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
-  </google-map>
+  <template is="dom-bind">
+    <google-map map="{{map}}"
+                latitude="37.779" longitude="-122.3892" zoom="13"
+                api-key="AIzaSyADSdPpM6BerLBUuvmLnwq_nL4S6ac4EQg"
+                styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
+    </google-map>
+    <point-overlay map="[[map]]" data='[{"lat": 37.779, "lng": -122.3892}]'>
+    </point-overlay>
+  </template>
 </body>
 
-</html>ё
+</html>

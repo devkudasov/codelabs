@@ -17,6 +17,7 @@
   "dependencies": {
     "google-map": "GoogleWebComponents/google-map#^2.0.5",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
-    "paper-elements": "PolymerElements/paper-elements#^1.0.7"
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "polymer-webgl-visualization": "googlecodelabs/polymer-webgl-visualization#^1.1.0"
   }
 }
