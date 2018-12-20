@@ -3,3 +3,9 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
+.paper-card-0 {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
