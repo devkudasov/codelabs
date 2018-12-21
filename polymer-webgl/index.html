@@ -20,11 +20,13 @@
 </head>
 
 <body unresolved>
-  <template is="dom-bind">
+  <template is="dom-bind" id="t">
     <google-map map="{{map}}"
                 latitude="38.6" longitude="-95.8" zoom="5"
                 api-key="AIzaSyADSdPpM6BerLBUuvmLnwq_nL4S6ac4EQg"
-                styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
+                styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'
+                on-google-map-ready="setPointSize"
+                on-zoom-changed="setPointSize">
     </google-map>
 
     <point-overlay map="[[map]]" uniforms="{{uniforms}}" data='{{data}}'>
@@ -40,6 +42,14 @@
       </paper-slider>
     </paper-card>
   </template>
+
+  <script>
+    var t = document.querySelector('#t');
+    t.setPointSize = function(e) {
+      this.uniforms.pointSize = Math.exp(0.3 * this.map.getZoom());
+      this.notifyPath('uniforms.pointSize', this.uniforms.pointSize);
+    };
+  </script>
 </body>
 
 </html>
